@@ -1,0 +1,12 @@
+Flask
+SQLAlchemy
+psycopg2-binary
+pydantic
+python-dotenv
+alembic
+flasgger
+PyJWT
+Werkzeug
+pytest
+pytest-flask
+email-validator

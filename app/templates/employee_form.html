@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% if employee %}
+            Edit Employee
+        {% else %}
+            Create Employee
+        {% endif %}
+    </title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 11px 18px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .cancel {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 11px 18px;
+            background: #6b7280;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .flash {
+            padding: 12px;
+            background: #fee2e2;
+            color: #991b1b;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Employee Management System</h1>
+
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/employees">Employees</a>
+        <a href="/employees/create">Add Employee</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>
+
+            {% if employee %}
+                Edit Employee
+            {% else %}
+                Create Employee
+            {% endif %}
+
+        </h2>
+
+        {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <div class="flash">
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+        <form method="POST">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="{{ employee.name if employee else '' }}"
+                    required
+                    maxlength="100"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ employee.email if employee else '' }}"
+                    required
+                    maxlength="255"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="department"
+                    name="department"
+                    value="{{ employee.department if employee else '' }}"
+                    required
+                    maxlength="100"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="salary">
+                    Salary
+                </label>
+
+                <input
+                    type="number"
+                    id="salary"
+                    name="salary"
+                    value="{{ employee.salary if employee else '' }}"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+
+                {% if employee %}
+                    Update Employee
+                {% else %}
+                    Create Employee
+                {% endif %}
+
+            </button>
+
+            <a
+                class="cancel"
+                href="/employees"
+            >
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

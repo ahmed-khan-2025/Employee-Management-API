@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Employee Details</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .actions {
+            margin-top: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 16px;
+            margin-right: 10px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .delete {
+            background: #dc2626;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Employee Management System</h1>
+
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/employees">Employees</a>
+        <a href="/employees/create">Add Employee</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Employee Details</h2>
+
+        <div class="row">
+            <div class="label">ID</div>
+            <div>{{ employee.id }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Name</div>
+            <div>{{ employee.name }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Email</div>
+            <div>{{ employee.email }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Department</div>
+            <div>{{ employee.department }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Salary</div>
+            <div>
+                {{ "%.2f"|format(employee.salary) }}
+            </div>
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="button"
+                href="/employees/{{ employee.id }}/edit"
+            >
+                Edit
+            </a>
+
+            <a
+                class="button delete"
+                href="/employees/{{ employee.id }}/delete"
+                onclick="return confirm('Are you sure you want to delete this employee?');"
+            >
+                Delete
+            </a>
+
+            <a
+                class="button"
+                href="/employees"
+            >
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

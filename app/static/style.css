@@ -1,0 +1,1071 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: #1f2937;
+    color: white;
+    padding: 20px 40px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+/*
+   Use class="container form-container"
+   on create/edit pages when a 700px form is desired.
+*/
+
+.form-container {
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   MODERN HEADER
+========================================================= */
+
+.header {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.header-left h1 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.header-left p {
+    margin: 0;
+    color: #777;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.username {
+    font-weight: bold;
+    color: #444;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-button {
+    display: inline-block;
+    padding: 9px 16px;
+
+    background: #dc3545;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background: #b02a37;
+}
+
+
+/* =========================================================
+   FLASH MESSAGES
+========================================================= */
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    background: #d1e7dd;
+    color: #0f5132;
+
+    border: 1px solid #badbcc;
+
+    padding: 12px 15px;
+
+    border-radius: 6px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   ORIGINAL FLASH
+========================================================= */
+
+.flash {
+    padding: 12px;
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.error-message {
+    background: #f8d7da;
+
+    color: #842029;
+
+    border: 1px solid #f5c2c7;
+
+    padding: 12px 15px;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+    background: #d1e7dd;
+
+    color: #0f5132;
+
+    border: 1px solid #badbcc;
+
+    padding: 12px 15px;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   ACTION BAR
+========================================================= */
+
+.action-bar {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.search-form {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.search-input,
+.department-select {
+    padding: 10px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+.search-input {
+    flex: 1;
+
+    min-width: 220px;
+}
+
+.department-select {
+    min-width: 180px;
+}
+
+.search-input:focus,
+.department-select:focus {
+    outline: none;
+
+    border-color: #007bff;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.button {
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.search-button {
+    background: #007bff;
+
+    color: white;
+}
+
+.search-button:hover {
+    background: #0056b3;
+}
+
+
+/* =========================================================
+   RESET BUTTON
+========================================================= */
+
+.reset-button {
+    background: #6c757d;
+
+    color: white;
+}
+
+.reset-button:hover {
+    background: #545b62;
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+========================================================= */
+
+.create-button {
+    background: #198754;
+
+    color: white;
+}
+
+.create-button:hover {
+    background: #146c43;
+}
+
+
+/* =========================================================
+   SUCCESS BUTTON
+========================================================= */
+
+.success-button {
+    background: #198754;
+
+    color: white;
+}
+
+.success-button:hover {
+    background: #146c43;
+}
+
+
+/* =========================================================
+   WARNING BUTTON
+========================================================= */
+
+.warning-button {
+    background: #ffc107;
+
+    color: #212529;
+}
+
+.warning-button:hover {
+    background: #ffca2c;
+}
+
+
+/* =========================================================
+   DANGER BUTTON
+========================================================= */
+
+.danger-button {
+    background: #dc3545;
+
+    color: white;
+}
+
+.danger-button:hover {
+    background: #b02a37;
+}
+
+
+/* =========================================================
+   ORIGINAL DELETE BUTTON
+========================================================= */
+
+.delete {
+    background: #dc2626;
+}
+
+.delete:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   NORMAL BUTTON
+   Original form-page button
+========================================================= */
+
+button {
+    padding: 11px 18px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.table-card {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.table-header {
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.table-header h2 {
+    margin: 0;
+}
+
+.employee-count {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8f9fa;
+
+    text-align: left;
+
+    padding: 13px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 14px;
+}
+
+td {
+    padding: 13px;
+
+    border-bottom: 1px solid #eee;
+
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.action-link {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   VIEW LINK
+========================================================= */
+
+.view-link {
+    background: #0d6efd;
+
+    color: white;
+}
+
+.view-link:hover {
+    background: #0a58ca;
+}
+
+
+/* =========================================================
+   EDIT LINK
+========================================================= */
+
+.edit-link {
+    background: #ffc107;
+
+    color: #212529;
+}
+
+.edit-link:hover {
+    background: #ffca2c;
+}
+
+
+/* =========================================================
+   DELETE LINK
+========================================================= */
+
+.delete-link {
+    background: #dc3545;
+
+    color: white;
+}
+
+.delete-link:hover {
+    background: #b02a37;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    padding: 40px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+.empty-state h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.page-link {
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    color: #007bff;
+
+    background: white;
+}
+
+.page-link:hover {
+    background: #f0f0f0;
+}
+
+.page-current {
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+
+    background: #007bff;
+
+    color: white;
+}
+
+.disabled {
+    color: #aaa;
+
+    background: #f8f9fa;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+select:focus {
+    outline: none;
+
+    border-color: #2563eb;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+
+    background: white;
+
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+
+    border-color: #2563eb;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    padding: 11px 18px;
+
+    background: #6b7280;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+.cancel:hover {
+    background: #4b5563;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h1,
+.form-card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.row {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.label {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.detail-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card h1,
+.detail-card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   DETAIL ACTIONS
+========================================================= */
+
+.detail-actions {
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+
+    max-width: 400px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+    margin-top: 0;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.login-title {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.login-subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    color: #777;
+}
+
+.dashboard-card {
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    color: #666;
+}
+
+.dashboard-number {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    margin-top: 40px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .header-right {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .search-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-input,
+    .department-select,
+    .button {
+        width: 100%;
+    }
+
+    .table-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+    .form-card,
+    .detail-card,
+    .login-card {
+        padding: 20px;
+    }
+
+    nav {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .logout-button {
+        margin-left: 0;
+    }
+
+    .cancel {
+        margin-left: 0;
+    }
+
+}
